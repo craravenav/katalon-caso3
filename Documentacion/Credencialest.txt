@@ -1,0 +1,4 @@
+Usuario: craravenav
+API KEY: 
+Endpoint para Prueba 1: https://api.timezonedb.com/v2.1/list-time-zone
+Endpoint para Prueba 2: https://api.timezonedb.com/v2.1/get-time-zone

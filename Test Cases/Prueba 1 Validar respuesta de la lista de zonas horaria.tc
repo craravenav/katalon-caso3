@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Prueba 1 Validar respuesta de la lista de zonas horaria</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b8cd1e5b-5d9a-41d9-b07f-bb68976857a0</testCaseGuid>
+</TestCaseEntity>

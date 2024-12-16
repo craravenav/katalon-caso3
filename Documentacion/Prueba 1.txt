@@ -1,0 +1,22 @@
+#Prueba 1
+
+Se realiza llamada al endpoint usando el Object Repository que lista los Time Zones, llamado "Get Lista de Time Zones"
+
+Luego usando la documentación del API: https://timezonedb.com/references/list-time-zone
+
+Se identifican los siguientes campos:
+
+- key = CORRESPONDE A LA API KEY ASIGNADA A LA CUENTA
+- format = FORMATO DE SALIDA XML/JSON
+- country = PAIS EN FORMATO CODIGO ISO 3166 SEGUN: https://timezonedb.com/country-codes
+- zone = ZONA CORRESPONDIENTE A LISTADO : https://timezonedb.com/time-zones
+
+Para el caso de la prueba se solicita listar todos, por lo que solo tomaremos los campos: KEY y FORMAT
+
+La llamada queda configurada segun: https://api.timezonedb.com/v2.1/list-time-zone?key=N6TQDG3QO1GU&format=json
+
+Se captura el resultado de la llamada en una variable llamada RESPONSE
+
+Luego se usa la funcion getStatusCode() con la variable RESPONSE y se deja en una variable STATUSCODE
+
+Se evalua la variable llamada STATUSCODE con operador ternario para verificar si es 200 de caso contrario termina el proceso con error

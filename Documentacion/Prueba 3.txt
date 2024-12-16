@@ -1,0 +1,28 @@
+#Prueba 3
+
+Se realiza llamada al endpoint usando el Object Repository que obtiene el Time Zone para una zona invalida "InvalidZone", llamado "Get Time Zone Invalida"
+
+Luego usando la documentación del API: https://api.timezonedb.com/v2.1/get-time-zone
+
+Se identifican los siguientes campos:
+
+- key = CORRESPONDE A LA API KEY ASIGNADA A LA CUENTA
+- format = FORMATO DE SALIDA XML/JSON
+- by = OPCION PARA REALIZAR LA BUSQUEDA PUEDE SER: ZONE o POSITION
+- zone = ZONA CORRESPONDIENTE A LISTADO : https://timezonedb.com/time-zones (Requerido si by=ZONE)
+- lat = CORRESPONDE A LA LATITUD DE UNA CIUDAD (Requerido si by=POSITION)
+- lng = CORRESPONDE A LA LONGITUD DE UNA CIUDAD (Requerido si by=POSITION)
+
+Para el caso de la prueba se solicita obtener los datos de la ZONE llamada "InvalidZone", por lo que solo tomaremos los campos: KEY, FORMAT, BY, ZONE
+
+La llamada queda configurada segun: https://api.timezonedb.com/v2.1/get-time-zone?key=N6TQDG3QO1GU&format=json&by=zone&zone=InvalidZone
+
+Se captura el resultado de la llamada en una variable llamada RESPONSE
+
+Luego se usa la funcion getStatusCode() con la variable RESPONSE y se deja en una variable STATUSCODE
+
+Se evalua la variable llamada STATUSCODE con operador ternario para verificar si es 404 de caso contrario termina el proceso con error
+
+## NOTA: 
+
+Para este caso se realizaron multiples pruebas y todas retornaban resultado 200 ok, inclusive con numeros

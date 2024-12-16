@@ -1,0 +1,48 @@
+#Prueba 2
+
+Se realiza llamada al endpoint usando el Object Repository que obtiene el Time Zone para una zona especifica "America/Santiago", llamado "Get Time Zone America Santiago"
+
+Luego usando la documentación del API: https://api.timezonedb.com/v2.1/get-time-zone
+
+Se identifican los siguientes campos:
+
+- key = CORRESPONDE A LA API KEY ASIGNADA A LA CUENTA
+- format = FORMATO DE SALIDA XML/JSON
+- by = OPCION PARA REALIZAR LA BUSQUEDA PUEDE SER: ZONE o POSITION
+- zone = ZONA CORRESPONDIENTE A LISTADO : https://timezonedb.com/time-zones (Requerido si by=ZONE)
+- lat = CORRESPONDE A LA LATITUD DE UNA CIUDAD (Requerido si by=POSITION)
+- lng = CORRESPONDE A LA LONGITUD DE UNA CIUDAD (Requerido si by=POSITION)
+
+Para el caso de la prueba se solicita obtener los datos de la ZONE llamada "America/Santiago", por lo que solo tomaremos los campos: KEY, FORMAT, BY, ZONE
+
+La llamada queda configurada segun: https://api.timezonedb.com/v2.1/get-time-zone?key=N6TQDG3QO1GU&format=json&by=zone&zone=America/Santiago
+
+Se captura el resultado de la llamada en una variable llamada RESPONSE
+
+Luego se usa la funcion getStatusCode() con la variable RESPONSE y se deja en una variable STATUSCODE
+
+Se evalua la variable llamada STATUSCODE con operador ternario para verificar si es 200 de caso contrario termina el proceso con error
+
+Luego usando JsonSlurper() instanciado desde la variable RESPONSE se distribuye el contenido del JSON por cada Body Content usando getResponseBodyContent()
+y todo el resultado se parsea como Texto en una variable llamada JSONRESPONSE.
+
+Luego se realizan 3 operaciones ternarias para comprobar:
+
+- datetime, si es nulo arroja "El campo DATETIME no está presente"
+- timezone, si es nulo arroja "El campo TIMEZONE no está presente"
+- utc_offset, si es nulo arroja "El campo UTC_OFFSET no está presente"
+
+Si los 3 operadores ternarios son validados, se procede a comparar TIMEZONE con "America/Santiago"
+
+
+##### NOTA:
+
+Revisando la respuesta del JSON en el OBject Repository me percato que no existen esos campos que solicita validar la prueba
+pero hay unos similares por lo que realice una Prueba 2.1 con la homologacion de las variables segun:
+
+- datetime = timestamp
+- timezone = zoneName
+- utc_offset = gmtOffset
+
+Ejecutando el mismo codigo de la Prueba 2, el resultado ahora es exitoso.
+

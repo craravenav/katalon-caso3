@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Prueba 2.1 Validar la obtención de la hora para una zona ADAPTADO</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>84e92e50-9426-4a57-8376-205c5ef33f89</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Prueba 3 Validar la respuesta en caso de zona horaria no válida</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b7351fb6-c1ae-4ebb-bc33-f114c0e0c1bb</testCaseGuid>
+</TestCaseEntity>
